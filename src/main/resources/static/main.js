@@ -163,8 +163,8 @@ var AppModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EmployeeService", function() { return EmployeeService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 
 
 
@@ -173,16 +173,13 @@ var EmployeeService = /** @class */ (function () {
         this.http = http;
     }
     EmployeeService.prototype.getEmployees = function () {
-        console.log("hi");
-        return this.http
-            .get("http://localhost:8080/getAll")
-            .subscribe(function (data) { return console.log(data); });
+        return this.http.get("http://localhost:8080/getAll");
     };
     EmployeeService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
             providedIn: "root"
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], EmployeeService);
     return EmployeeService;
 }());
@@ -209,7 +206,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  employees works!\n</p>\n<ul>\n  <!-- <li *ngFor=\"let emp of employees\">\n    <span>{{emp.id}}</span> {{emp.name}}\n  </li> -->\n</ul>\n"
+module.exports = "<p>\n  employees works!\n</p>\n<ul *ngIf=\"employees\">\n  <li *ngFor=\"let emp of employees\">\n    <span>{{emp.employeeId}}</span> {{emp.employeeName}}\n  </li>\n</ul>\n"
 
 /***/ }),
 
@@ -234,7 +231,11 @@ var EmployeesComponent = /** @class */ (function () {
         this.empService = empService;
     }
     EmployeesComponent.prototype.ngOnInit = function () {
-        this.employees = this.empService.getEmployees();
+        var _this = this;
+        this.empService.getEmployees().subscribe(function (data) {
+            console.log(data);
+            _this.employees = data;
+        });
     };
     EmployeesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
