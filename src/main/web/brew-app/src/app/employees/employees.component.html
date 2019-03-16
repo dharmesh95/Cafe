@@ -1,0 +1,8 @@
+<p>
+  employees works!
+</p>
+<ul *ngIf="employees">
+  <li *ngFor="let emp of employees">
+    <span>{{emp.employeeId}}</span> {{emp.employeeName}}
+  </li>
+</ul>
