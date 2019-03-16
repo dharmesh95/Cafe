@@ -1,4 +1,4 @@
-package com.timhortons.brew.service;
+package com.cafe.brew.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.timhortons.brew.dao.EmployeeDao;
-import com.timhortons.brew.entity.Employee;
+import com.cafe.brew.dao.EmployeeDao;
+import com.cafe.brew.entity.Employee;
 
 @Service
 public class EmployeeService {

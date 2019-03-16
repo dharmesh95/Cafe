@@ -1,4 +1,4 @@
-package com.timhortons.brew.entity;
+package com.cafe.brew.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

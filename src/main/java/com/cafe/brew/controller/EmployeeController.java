@@ -1,4 +1,4 @@
-package com.timhortons.brew.controller;
+package com.cafe.brew.controller;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.timhortons.brew.entity.Employee;
-import com.timhortons.brew.service.EmployeeService;
+import com.cafe.brew.entity.Employee;
+import com.cafe.brew.service.EmployeeService;
 
 @Controller
 public class EmployeeController {

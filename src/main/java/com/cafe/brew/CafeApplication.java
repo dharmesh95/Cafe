@@ -1,14 +1,13 @@
-package com.timhortons.brew;
+package com.cafe.brew;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TimHortonsApplication {
+public class CafeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TimHortonsApplication.class, args);
+		SpringApplication.run(CafeApplication.class, args);
 	}
 
 }
-
